@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Geometry Dash</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lexend', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1e1e1e; /* Fondo en tono oscuro */
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100vh;
+            text-align: center;
+            padding-top: 50px;
+        }
+        .content-container {
+            width: 80%;
+            max-width: 900px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        h1 {
+            font-weight: 600;
+            font-size: 2.5em;
+        }
+        p {
+            text-align: justify;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        .button-container {
+            text-align: center;
+            padding-top: 40px;
+        }
+        .show-pdf-btn {
+            background-color: #6ec1e4;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .show-pdf-btn:hover {
+            background-color: #58a3c4;
+        }
+        #video-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro detrás del video */
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Hace que el video ocupe toda la pantalla */
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="content-container">
+        <h1>Cómo ser el mejor en Geometry Dash y llegar al top 1</h1>
+        <p>En esta web, yo, un jugador de GD (del top 500), te diré cómo hice yo para llegar hasta donde estoy.</p>
+
+        <p>En primer lugar: no te vicies. Y esto es lo más esencial, ya que lo único que consigues viciando es estresarte más si no consigues los resultados que deseas.</p>
+        <p>Bien, esto nos lleva al segundo punto. Y este es que tengas identificado tu nivel de dificultad. ¿Y esto por qué Yandrak? Pues porque si tu nivel de dificultad actual es easy demon, no vas a invertir tu valioso tiempo en un extreme ya que no vas a llegar a más del 10% del nivel. Entonces, lo primero es evaluar tu nivel, y luego empezar a jugar muchos niveles de esa dificultad (a ser posible con rate), y una vez hayas llegado al punto en el que eres capaz de pasarte casi cualquier nivel de esa dificultad en pocos intentos, pasa a la siguiente dificultad.</p>
+        <p>Punto número 3: No tengas prisa en pasarte cierto extreme. Y es que a todos nos ha pasado de ver un nivel en YouTube que tiene muchísima decoración y tiene dificultad extreme demon y pensamos "wow, me quiero pasar este extreme". Pues a no ser que tu nivel de dificultad no esté en extreme no pierdas tu tiempo haciéndole prácticas a ese nivel (me pasaba a mí con Bloodbath, invertía miles de intentos en pasármelo cuando no me había pasado más que cuarenta demons y eran easy y medium la mayoría. Hasta que mejoré y llegué al nivel óptimo para pasarme un extreme y me pasé bloodbath en solo 3202 intentos, cuando antes había perdido mi tiempo haciendo 30000 intentos a este nivel).</p>
+        <p>He hecho una guía (es un pdf) en español y en inglés con todos mis trucos, consejos y más para que puedas aprender de ellos. Están muy bien explicados y los interiorizarás muy bien todos.</p>
+        <p>Espero que te sirva de ayuda.<br>Yandrak</p>
+
+        <div class="button-container">
+            <button class="show-pdf-btn" onclick="mostrarVideo()">Ver el PDF aquí</button>
+        </div>
+
+        <div id="video-container">
+            <!-- Video rickroll -->
+            <video id="video" autoplay playsinline>
+                <source src="rickroll.mp4" type="video/mp4">
+                Tu navegador no soporta el formato de video.
+            </video>
+        </div>
+    </div>
+
+    <script>
+        function mostrarVideo() {
+            var videoContainer = document.getElementById('video-container');
+            var video = document.getElementById('video');
+            videoContainer.style.display = 'flex'; // Muestra el contenedor del video
+            video.play(); // Reproduce el video automáticamente
+
+            // Poner el video en pantalla completa
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if (video.mozRequestFullScreen) { // Para Firefox
+                video.mozRequestFullScreen();
+            } else if (video.webkitRequestFullscreen) { // Para Chrome, Safari y Opera
+                video.webkitRequestFullscreen();
+            } else if (video.msRequestFullscreen) { // Para IE/Edge
+                video.msRequestFullscreen();
+            }
+        }
+    </script>
+</body>
+</html>
+
